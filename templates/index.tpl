@@ -12,6 +12,6 @@
 		</ul>
 	</header>
 	<h1>{{H1}}</h1>
-	<div>{{CONTENT}}</div>
+	<div><h2><i>{{CONTENT}}</i></h2></div>
 </body>
 </html>
