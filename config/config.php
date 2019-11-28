@@ -8,4 +8,5 @@
     define('TEMPLATES_DIR', SITE_DIR . 'templates/');   // Шаблоны
     define('IMG_DIR', 'img/');                          // Изображения
     
-    require_once ENGINE_DIR . 'functions.php';          // Подключение функционала
+    require_once ENGINE_DIR . 'functions.php';          // Подключение общих функций
+    require_once ENGINE_DIR . 'gallery.php';            // Подключение функций работы с галереей

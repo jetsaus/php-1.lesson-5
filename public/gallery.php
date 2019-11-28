@@ -7,4 +7,4 @@
         'h4'   => 'Фото-зоопарк:'
     ]);
     // Отображение галереи
-    galleryRendering(IMG_DIR, 3);
+    getGallery(IMG_DIR, 3);
