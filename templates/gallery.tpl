@@ -11,7 +11,7 @@
             <li><a href="/gallery.php">Галерея</a></li>
         </ul>
     </header>
-    <h3>{{H3}}</h3>
-    <h4>{{H4}}</h4>
+    <h3>{{HEAD}}</h3>
+    <div>{{CONTENT}}</div>
 </body>
 </html>
