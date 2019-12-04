@@ -8,5 +8,12 @@
     define('TEMPLATES_DIR', SITE_DIR . 'templates/');   // Шаблоны
     define('IMG_DIR', 'img/');                          // Изображения
     
-    require_once ENGINE_DIR . 'functions.php';          // Подключение общих функций
-    require_once ENGINE_DIR . 'gallery.php';            // Подключение функций работы с галереей
+    // Константы соединения с б/д
+    define('DB_HOST', 'hw');
+    define('DB_USER', 'jetsaus');
+    define('DB_PASS', 'opdf117!');
+    define('DB_NAME', 'jetsaus');
+    
+    require_once ENGINE_DIR . 'functions.php';          // Общие функции
+    require_once ENGINE_DIR . 'gallery.php';            // Функции работы с галереей
+    require_once ENGINE_DIR . 'db.php';                 // Функции работы с БД
