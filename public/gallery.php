@@ -6,5 +6,3 @@
             'head'      => 'Фото-зоопарк:',
             'content'   => $htmlGallery
     ]);
-    
-    // $a = getAssocResult("SELECT * FROM gallery");

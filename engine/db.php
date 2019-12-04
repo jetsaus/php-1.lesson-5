@@ -12,6 +12,8 @@ function createConnection()
 }
 
 // Выполнение SQL-запроса
+// Применяется только для модификации данных
+// Возвращает количество записей, затронутых SQL-запросом
 function execQuery($sql)
 {
     $db = createConnection();               // Создание соединения
@@ -21,14 +23,15 @@ function execQuery($sql)
 }
 
 // Создание соединения, выполнение запроса и возврат результата запроса, как результата выполнения функции
+// Применяется для выборки данных
 function getAssocResult($sql)
 {
-    $db = createConnection();
-    $result = mysqli_query($db, $sql);
-    $arrayResult = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        $arrayResult[] = $row;
+    $db = createConnection();                       // Создание соединения
+    $result = mysqli_query($db, $sql);              // Выполнение запроса к БД
+    $arrayResult = [];                              // Объявление массива для возврата выборки
+    while ($row = mysqli_fetch_assoc($result)) {    // Цикл по результирующему ряду выборки
+        $arrayResult[] = $row;                          // Добавление элемента выборки в результирующий массив
     }
-    mysqli_close($db);
+    mysqli_close($db);                              // Закрытие соединения с БД
     return $arrayResult;
 }
