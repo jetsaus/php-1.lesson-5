@@ -4,6 +4,7 @@
  */
 
 // Создание соединения с БД
+// Возвращает объект, представляющий связь с БД или false
 function createConnection()
 {
     $db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);   // Подключение к БД
@@ -24,6 +25,7 @@ function execQuery($sql)
 
 // Создание соединения, выполнение запроса и возврат результата запроса, как результата выполнения функции
 // Применяется для выборки данных
+// Возвращает ассоциативный массив с выборкой
 function getAssocResult($sql)
 {
     $db = createConnection();                       // Создание соединения
@@ -34,4 +36,15 @@ function getAssocResult($sql)
     }
     mysqli_close($db);                              // Закрытие соединения с БД
     return $arrayResult;
+}
+
+// Выборка единственной записи из б/д
+// Возвращает ассоциативный массив с выборкой или NULL
+function getSingle($sql)
+{
+    $result = getAssocResult($sql);
+    if (empty($result)) {
+        return NULL;
+    }
+    return $result[0];
 }
