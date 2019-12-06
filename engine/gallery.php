@@ -38,6 +38,13 @@
             }
         }
         $result .= '</table>';          // Закроем тег таблицы
-        
         return $result;                 // HTML отображения галереи
+    }
+    // Функция получает одно изображение по его id
+    function getImage($id)
+    {
+        
+        $id = (int)$id;                                     // Превращаем id в число
+        $sql = "SELECT * FROM `gallery` WHERE `id` = $id";  // Формируем SQL-запрос
+        return getSingle($sql);                             // и возвращаем результат, выполняя его
     }
