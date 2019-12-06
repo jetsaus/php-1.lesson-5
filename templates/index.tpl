@@ -1,3 +1,4 @@
+<!-- Главная страница -->
 <!doctype>
 <html>
 <head>
@@ -14,6 +15,5 @@
 	<h1>{{HEAD}}</h1>
 	<div><h2><i>{{CONTENT}}</i></h2></div>
 	<div><img src="{{IMAGE}}" alt="{{ALT}}"></div>
-
 </body>
 </html>
