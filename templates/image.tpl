@@ -13,6 +13,8 @@
         </ul>
     </header>
     <h3>{{NAME}}</h3>
-    <div>{{CONTENT}}</div>
+    <div>
+        <img src="{{URL}}" alt="{{NAME}}">
+    </div>
 </body>
 </html>

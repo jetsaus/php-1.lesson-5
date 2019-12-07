@@ -49,10 +49,10 @@
         return getSingle($sql);                             // и возвращаем результат, выполняя его
     }
     
-    // Функция отображает фото в браузер
+    // Функция возвращает информацию о фото из БД по id
     function showImage($id)
     {
-        $htmlImage = '';
+        //$htmlImage = '';
         $id = (int)$id;                                             // Превращаем id в число
         $image = getImage($id);                                     // Получаем информацию о фото
         if (empty($image)) {                                        // Если информация о фото отсутствует
@@ -60,8 +60,5 @@
             die;
         }
         // Сформируем контент тега отображения фото и добавим его в массив $image
-        $htmlImage = '<img src="' . IMG_DIR . $image['url'] . '" alt="' . $image['name'] . '">';
-        $image['content'] = $htmlImage;
-        
         return render(TEMPLATES_DIR . 'image.tpl', $image);         // Возвращаем HTML-код отображения страницы с фото
     }
