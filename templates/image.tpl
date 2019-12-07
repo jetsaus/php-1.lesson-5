@@ -2,7 +2,7 @@
 <!doctype>
 <html>
 <head>
-    <title>{{TITLE}}</title>
+    <title>{{NAME}}</title>
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
             <li><a href="/gallery.php">Галерея</a></li>
         </ul>
     </header>
-    <h3>{{HEAD}}</h3>
+    <h3>{{NAME}}</h3>
     <div>{{CONTENT}}</div>
 </body>
 </html>

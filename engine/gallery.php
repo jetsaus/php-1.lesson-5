@@ -44,7 +44,6 @@
     // Функция получает информацию об одном фото по его id
     function getImage($id)
     {
-        
         $id = (int)$id;                                     // Превращаем id в число
         $sql = "SELECT * FROM `gallery` WHERE `id` = $id";  // Формируем SQL-запрос
         return getSingle($sql);                             // и возвращаем результат, выполняя его
@@ -53,13 +52,16 @@
     // Функция отображает фото в браузер
     function showImage($id)
     {
-        $image = getImage($id);                                     // Получаем информацию о фото
+        $htmlImage = '';
         $id = (int)$id;                                             // Превращаем id в число
+        $image = getImage($id);                                     // Получаем информацию о фото
         if (empty($image)) {                                        // Если информация о фото отсутствует
             echo 'Ошибка 404, фотографии с таким id нет в базе!';
             die;
         }
-        // Возвращаем отображение страницы с фото
-        var_dump($image);
-        return render(TEMPLATES_DIR . 'image.tpl', $image);
+        // Сформируем контент тега отображения фото и добавим его в массив $image
+        $htmlImage = '<img src="' . IMG_DIR . $image['url'] . '" alt="' . $image['name'] . '">';
+        $image['content'] = $htmlImage;
+        
+        return render(TEMPLATES_DIR . 'image.tpl', $image);         // Возвращаем HTML-код отображения страницы с фото
     }
