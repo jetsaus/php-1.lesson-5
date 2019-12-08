@@ -17,5 +17,7 @@
     <div>
         <img src="{{URL}}" alt="{{NAME}}">
     </div>
+    <br>
+    <a href="/gallery.php"><< Назад</a>
 </body>
 </html>
