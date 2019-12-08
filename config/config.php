@@ -9,11 +9,13 @@
     define('IMG_DIR', 'img/');                          // Изображения
     
     // Константы соединения с б/д
-    define('DB_HOST', 'hw');
-    define('DB_USER', 'jetsaus');
-    define('DB_PASS', 'opdf117!');
-    define('DB_NAME', 'jetsaus');
-    define('COLUMNS', 3);
+    define('DB_HOST', 'hw');                            // Доменное имя сервера
+    define('DB_USER', 'jetsaus');                       // Имя пользователя
+    define('DB_PASS', 'opdf117!');                      // Пароль
+    define('DB_NAME', 'jetsaus');                       // Имя БД
+    
+    // Прочие константы
+    define('COLUMNS', 3);                               // Количество колонок при отображении галереи
     
     require_once ENGINE_DIR . 'functions.php';          // Общие функции
     require_once ENGINE_DIR . 'gallery.php';            // Функции работы с галереей
