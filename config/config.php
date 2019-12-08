@@ -13,6 +13,7 @@
     define('DB_USER', 'jetsaus');
     define('DB_PASS', 'opdf117!');
     define('DB_NAME', 'jetsaus');
+    define('COLUMNS', 3);
     
     require_once ENGINE_DIR . 'functions.php';          // Общие функции
     require_once ENGINE_DIR . 'gallery.php';            // Функции работы с галереей
