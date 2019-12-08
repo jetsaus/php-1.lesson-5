@@ -8,6 +8,13 @@
 function createConnection()
 {
     $db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);   // Подключение к БД
+    // Обработка ошибки подключения к БД
+    if (!$db) {
+        echo "Ошибка: Невозможно установить соединение с MySQL." . PHP_EOL;
+        echo "Код ошибки errno: " . mysqli_connect_errno() . PHP_EOL;
+        echo "Текст ошибки error: " . mysqli_connect_error() . PHP_EOL;
+        die;
+    }
     mysqli_set_charset($db, 'utf8');                            // Установка кодировки UTF-8
     return $db;
 }
