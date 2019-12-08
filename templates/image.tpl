@@ -19,5 +19,6 @@
     </div>
     <br>
     <a href="/gallery.php"><< Назад</a>
+    <p>Просмотров: {{VIEWS}}</p>
 </body>
 </html>
