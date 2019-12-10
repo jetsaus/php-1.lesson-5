@@ -2,6 +2,8 @@
 /*
  * Функции работы с галереей
  */
+    require_once '../config/config.php';
+    
     // Функция формирует и возвращает HTML-код отображения галереи
     function getGallery(
         $fDir = IMG_DIR,    // Папка с изображениями по умолчанию
@@ -41,6 +43,13 @@
         return $result;                 // HTML отображения галереи
     }
     
+    // Функция получает информацию из БД обо всей галерее
+    function getImages($sql)
+    {
+        $result = getAssocResult($sql);     // Получим инфу из БД
+        return $result;                     // и вернем ее ассоциативным массивом
+    }
+    
     // Функция получает информацию об одном фото по его id
     function getImage($id)
     {
@@ -52,7 +61,6 @@
     // Функция возвращает информацию о фото из БД по id
     function showImage($id)
     {
-        //$htmlImage = '';
         $id = (int)$id;                                             // Превращаем id в число
         $image = getImage($id);                                     // Получаем информацию о фото
         if (empty($image)) {                                        // Если информация о фото отсутствует
