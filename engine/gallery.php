@@ -5,9 +5,10 @@
     require_once '../config/config.php';
     
     // Функция формирует и возвращает HTML-код отображения галереи
-    function getGallery(
+    function renderGallery(
         $fDir = IMG_DIR,    // Папка с изображениями по умолчанию
-        $fColumns = 3       // Количество колонок в строке по умолчанию
+        $fColumns = 3,      // Количество колонок в строке по умолчанию
+        $fArrayImages = []  // Массив с иформацией о фотографиях
     )
     {
         // ПЕРЕМЕННЫЕ
