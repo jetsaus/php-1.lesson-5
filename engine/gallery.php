@@ -11,18 +11,23 @@
     )
     {
         // ПЕРЕМЕННЫЕ
-        $urls = array_column($fArrayImages, 'url');     // Массив url'ов картинок
-        $k = 0;                                         // Счетчик картинок в строке
-        $result = '';                                   // HTML-код отображения галереи
+        $urls = $fArrayImages;                                  // Массив url'ов картинок
+        $urlImg = '';
+        $altImg = '';
+        $k = 0;                                                 // Счетчик картинок в строке
+        $result = '';                                           // Формируемый HTML-код отображения галереи
         
         // КОД
         $result .= '<table>';                                       // Открывем тег таблицы
         //  Цикл по всем файлам в галерее
         foreach ($urls as $url) {
+            $urlImg = $url['url'];
+            $altImg = $url['name'];
             if ($k % $fColumns == 0) echo '<tr>';                   // Добавляем новую строку
             $result .= '<td>';                                      // Начинаем новый столбец
-                $result .= "<a href=$url target=_blank>";               // Формируем ссылку на полноформатную картинку
-                $result .= "<img src=$url alt='Фото' width='100' />";   // Выводим превью картинки
+                $result .= "<a href=$urlImg target=_blank>";               // Формируем ссылку на полноформатную
+            // картинку
+                $result .= "<img src=$urlImg alt=$altImg width='100' />";   // Выводим превью картинки
                 $result .= '</a>';                                      // Закрываем ссылку
             $result .= '</td>';                                     // Закрываем столбец
             if ((($k + 1) % $fColumns == 0)) {                      // Переходим на следеющею строку при заполнении
