@@ -1,8 +1,13 @@
 <?php
     require_once '../config/config.php';
-    $htmlGallery = renderGallery(IMG_DIR, COLUMNS);        // Формирование HTML галереи
-    echo render(TEMPLATES_DIR . 'gallery.tpl', [        // Отображение галереи
+    
+    // Формирование HTML галереи
+    // $htmlGallery = getImages('SELECT * FROM gallery ORDER BY `views` DESC');
+    
+    // Отображение галереи
+    echo render(TEMPLATES_DIR . 'gallery.tpl', [
             'title'     => 'Фото-зоопарк',
             'head'      => 'Фото-зоопарк:',
-            'content'   => $htmlGallery
+            //'content'   => renderGallery($htmlGallery, 5)
+            'content'   => renderGallery(getImages('SELECT * FROM gallery ORDER BY `views` DESC'), COLUMNS)
     ]);

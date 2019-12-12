@@ -15,7 +15,7 @@
     define('DB_NAME', 'jetsaus');                       // Имя БД
     
     // Прочие константы
-    define('COLUMNS', 3);                               // Количество колонок при отображении галереи
+    define('COLUMNS', 4);                               // Количество колонок при отображении галереи
     
     require_once ENGINE_DIR . 'functions.php';          // Общие функции
     require_once ENGINE_DIR . 'gallery.php';            // Функции работы с галереей
