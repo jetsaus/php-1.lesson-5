@@ -67,6 +67,19 @@
             echo 'Ошибка 404, файл "' . $image['url'] . '" отсутствует!';      // Выводим сообщение об ошибке
             die;
         }
-        // Формируем контент тега отображения фото и добавляем его в массив $image
-        return render(TEMPLATES_DIR . 'image.tpl', $image);         // Возвращаем HTML-код отображения страницы с фото
+        $image['views']++;                                      // Увеличиваем количество просмотров на 1
+        updateViews($id, $image['views']);                      // Запишем их в БД
+        return render(TEMPLATES_DIR . 'image.tpl', $image);     // Возвращаем HTML-код отображения страницы с фото
+    }
+    
+    // Функция записывает количество просмотров фото заданного $id в БД
+    function updateViews(
+        $id,                // id фотографии
+        $views              // Количество записываемых просмотров
+    )
+    {
+        $id = (int)$id;                                                       // Преобразуем $id в число
+        $viewsStr = strval($views);                                           // Число преобразем в строку
+        $sql = "UPDATE `gallery` SET `views`=$viewsStr WHERE `id` = $id";     // Формируем SQL-запрос
+        return execQuery($sql);                                               // Выполняем его
     }
